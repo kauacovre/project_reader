@@ -1,32 +1,26 @@
-# Import de library from reade video
-import cv2
+# main.py - The main entry point
+from frame_extractor import extract_key_frames
+from scene_detector import extract_smart_frames
+from video_player import play_video
 
-
-# Let's open a video file
-video = cv2.VideoCapture("video.mp4") 
-
-
-if video.isOpened():
-    print("Sucess! Videos is opened.")
-
-
-    # Let's read the first frame!
-    ret, frame = video.read()
-
-
-    # if and Else, if frame true or false
-    if ret:
-        print("Great frame!")
-        
-        print(f"frame size: {frame.shape}" ) # Shows the dimensions of the video frame.
-
-       
-        cv2.imshow("My first frame", frame)  # Show the frame in a window
-        cv2.waitKey(0)                       # Wait for any key press
-        cv2.destroyAllWindows()              # Close all windows after pressing the key
-
-
+def main():
+    video_path = "../../video.mp4"
+    
+    print("🎬 Professional Video Analyzer")
+    print("1. Extract regular frames")
+    print("2. Smart scene detection")
+    print("3. Play video")
+    
+    choice = input("Choose option (1-3): ")
+    
+    if choice == "1":
+        extract_key_frames(video_path, 5)
+    elif choice == "2":
+        extract_smart_frames(video_path, 5)
+    elif choice == "3":
+        play_video(video_path)
     else:
-        print("Couldn't read frame")
-else:
-    print("Oops! Couldn't open video")
+        print("Invalid choice")
+
+if __name__ == "__main__":
+    main()
