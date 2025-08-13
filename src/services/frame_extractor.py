@@ -69,4 +69,4 @@ def extract_key_frames(video_path, num_frames = 5, output_folder="extracted_fram
     video.release()
     print(f"Summary complete! Saved {saved_count} key frames in '{frames_folder}' folder")
 
-extract_key_frames("../../video.mp4", 5)
+extract_key_frames("../../video.mp4", 10)

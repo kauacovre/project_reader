@@ -57,4 +57,4 @@ def extract_smart_frames(video_path, num_frames=5, threshold=30, output_folders=
     video.release()
     print(f"Smart extraction complete! Found {saved_count} scene changes")
 
-extract_smart_frames("../../video.mp4", 5, threshold=30)
+extract_smart_frames("../../video.mp4", 30, threshold=30)
